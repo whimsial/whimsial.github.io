@@ -1,0 +1,11 @@
+<header class="profile">
+  {%- if site.author.photo -%}
+  <img class="profile__photo" src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}">
+  {%- endif -%}
+  <div class="profile__intro">
+    <h1 class="profile__name">{{ site.author.name }}</h1>
+    {%- if site.author.role -%}<p class="profile__role">{{ site.author.role }}</p>{%- endif -%}
+    {%- if site.author.affiliation -%}<p class="profile__affil">{{ site.author.affiliation }}</p>{%- endif -%}
+    {% include social.html %}
+  </div>
+</header>

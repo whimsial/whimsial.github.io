@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="wrap page">
+  <h1 class="page__title">{{ page.title }}</h1>
+  {%- if page.lead -%}<p class="page__lead">{{ page.lead }}</p>{%- endif -%}
+  {{ content }}
+
+  {%- assign pubs = site.data.publications -%}
+  {%- if pubs and pubs.size > 0 -%}
+    {%- assign years = pubs | map: "year" | uniq -%}
+    {%- for year in years -%}
+      <h2 class="pub-year">{{ year | default: "Other" }}</h2>
+      {%- for pub in pubs -%}
+        {%- if pub.year == year -%}
+          {% include publication.html pub=pub %}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- else -%}
+    <p>Publications will appear here once <code>_data/publications.yml</code> is generated.</p>
+  {%- endif -%}
+</div>

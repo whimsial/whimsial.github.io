@@ -1,0 +1,3 @@
+# Dependencies for scripts/fetch_publications.py
+pyyaml>=6.0
+bibtexparser~=1.4

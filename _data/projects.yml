@@ -1,0 +1,108 @@
+# Research projects shown on the /research/ page.
+# Each item: name, description (markdown), optional links and tags.
+# Optional `status` is "ongoing" or "completed" (shown as a badge).
+# Optional `group_break: true` starts a new group (pale separator before it);
+# optional `group_label` prints a heading above the group.
+
+# --- GATE group ---------------------------------------------------------------
+
+- name: Resolving the genetic architecture of complex inflammatory diseases
+  status: ongoing
+  description: >-
+    I aim to advance GATE with population-scale proteomics and long-read
+    transcriptomics, mapping causal disease mechanisms across complex diseases to
+    discover targets for new therapeutics. I am interested in understanding how
+    disease-critical genes are regulated, what role local and distant genetic
+    effects play, and what this tells us about the genetic architecture of
+    complex traits in general. Finally, I am exploring the genetic differences in
+    disease risk that may have arisen over time between populations of different
+    ancestry.
+
+- name: Genome-wide aggregated trans-effects (GATE)
+  status: ongoing
+  description: >-
+    A method to detect effector (core) genes mediating disease. It builds on the
+    omnigenic model
+    ([Boyle et al., 2017](https://doi.org/10.1016/j.cell.2017.05.038)) and uses
+    the [GENOSCORES](https://genoscores.cphs.mvm.ed.ac.uk/) platform to compute
+    eQTL and pQTL scores, aggregating trans-QTL effects into genome-wide scores
+    that are then tested for association with disease. Supported by the
+    [UK/Canada Collaboration on the genetics of long-term diabetes complications](https://gtr.ukri.org/projects?ref=MR%2FT032340%2F1).
+  links:
+    - label: GATE pipeline
+      url: https://github.com/molepi-precmed/trans-qtls
+  tags: [R, Shell]
+
+- name: Core genes for systemic lupus erythematosus
+  status: completed
+  description: >-
+    Using [GENOSCORES](https://genoscores.cphs.mvm.ed.ac.uk/) and the
+    [GATE](https://github.com/molepi-precmed/trans-qtls) method to detect
+    effector (core) genes mediating systemic lupus. A collaboration with
+    [GENYO](https://www.genyo.es/centre/?lang=en) — Centro Pfizer, Universidad
+    de Granada, Junta de Andalucía de Genómica e Investigación Oncológica.
+  tags: [R]
+
+- name: Genetics of osteoarthritis
+  status: ongoing
+  description: >-
+    A collaboration with the [Kague Lab](https://www.kaguelab.com) investigating
+    the genetics of osteoarthritis. The collaboration includes two shared PhD
+    students whom I co-supervise.
+  links:
+    - label: Kague Lab
+      url: https://www.kaguelab.com
+  tags: [R]
+
+# --- GENOSCORES group ---------------------------------------------------------
+
+- name: GENOSCORES platform
+  status: ongoing
+  group_break: true
+  description: >-
+    I am a lead developer and maintainer of the GENOSCORES code base, server and
+    database. GENOSCORES comprises a curated database of published GWAS summary
+    statistics, a web platform, an R package, a suite of software tools and a
+    REST API. It is used with individual-level genome-wide SNP data to calculate
+    genotypic scores for intermediate phenotypes. Supported by the Academy of
+    Medical Sciences Springboard award.
+  links:
+    - label: GENOSCORES website
+      url: https://genoscores.cphs.mvm.ed.ac.uk
+  tags: [R, "C++", PHP, HTML, Shell, SQL]
+
+- name: Prediction of treatment response in rheumatoid arthritis
+  status: completed
+  description: >-
+    I train predictive models with hierarchical shrinkage priors using the
+    [hsstan](https://github.com/mcol/hsstan) package to predict treatment
+    response from panels of biomarkers predictive of synovial pathotypes in
+    rheumatoid arthritis. A collaborative project within the UK-led
+    [MATURA](https://matura.whri.qmul.ac.uk) and
+    [TRACT-RA](https://gtr.ukri.org/projects?ref=MR%2FV012509%2F1) consortia.
+  tags: [R]
+
+# --- Projects related to my PhD -----------------------------------------------
+
+- name: Spindle FEA
+  status: completed
+  group_break: true
+  group_label: Projects related to my PhD
+  description: >-
+    A parametric modelling application for the elastic stability of the mitotic
+    spindle in several cell types during mitosis, using continuum mechanics and
+    finite-element analysis. Developed as part of my PhD.
+  links:
+    - label: Spindle FEA
+      url: https://spindlefea.soton.ac.uk
+    - label: Repository
+      url: https://git.soton.ac.uk/ai1v14/SpindleFEA
+  tags: [Python]
+
+- name: 3D printing service
+  status: completed
+  description: >-
+    I co-initiated, managed and developed the web platform for the 3D printing
+    service at the University of Southampton. Access is now restricted to
+    registered users since the application moved behind the university firewall.
+  tags: [PHP, HTML, JavaScript]

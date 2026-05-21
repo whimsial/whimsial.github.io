@@ -1,0 +1,45 @@
+name: Update publications
+
+# Refreshes _data/publications.yml from ORCID + _bibliography/extra.bib.
+# A commit to master from this job triggers the Deploy site workflow.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch publications
+        env:
+          # Optional: add an S2_API_KEY repository secret for higher rate limits.
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: python scripts/fetch_publications.py
+
+      - name: Commit updated publications
+        run: |
+          if git diff --quiet -- _data/publications.yml; then
+            echo "No publication changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/publications.yml
+          git commit -m "Update publications from ORCID"
+          git push

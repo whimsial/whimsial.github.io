@@ -2,6 +2,13 @@
 .idea/
 .bundle
 .sass-cache
+.jekyll-cache/
+__pycache__/
+*.pyc
 _site/
 Gemfile.lock
 **/.ruby-version
+.DS_Store
+
+# Working documents — not part of the website
+narrative.md

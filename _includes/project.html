@@ -1,0 +1,26 @@
+{%- assign project = include.project -%}
+<article class="project">
+  <div class="project__head">
+    <h3 class="project__name">{{ project.name }}</h3>
+    {%- if project.status -%}
+    <span class="project__status project__status--{{ project.status }}">{{ project.status }}</span>
+    {%- endif -%}
+  </div>
+  <div class="project__body">{{ project.description | markdownify }}</div>
+  {%- if project.links or project.tags -%}
+  <div class="project__footer">
+    {%- if project.links -%}
+    <div class="project__links">
+      {%- for link in project.links -%}
+      <a class="pub-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+    {%- if project.tags -%}
+    <div class="project__tags">
+      {%- for tag in project.tags -%}<span class="tag">{{ tag }}</span>{%- endfor -%}
+    </div>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+</article>

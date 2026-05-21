@@ -1,0 +1,53 @@
+% Hand-maintained publication supplement.
+%
+% Anything listed here is merged into the website's publication list on top of
+% the works pulled automatically from ORCID. Use it for items ORCID misses or
+% is slow to pick up: conference papers, posters, talks, reports, etc.
+%
+% Rules:
+%   - Entries are merged additively. If an entry here matches an ORCID work
+%     (same DOI, or same title), the ORCID version wins and this one is dropped.
+%   - A `doi` is optional. If present, the entry is enriched with citation
+%     counts / open-access PDF links just like ORCID works. Without a DOI the
+%     entry is shown using exactly the fields below.
+%   - `pdf` is an optional direct link to a PDF; `url` an optional landing page.
+%   - Supported entry types: @article, @inproceedings, @conference,
+%     @phdthesis, @mastersthesis, @incollection, @book, @techreport, @misc.
+%
+% Example of the format (commented out):
+%
+% @inproceedings{example2026,
+%   title     = {An example conference paper that ORCID has not indexed yet},
+%   author    = {Iakovliev, Andrii and Coauthor, Jane},
+%   booktitle = {Proceedings of the Example Conference on Genomics},
+%   year      = {2026},
+%   doi       = {10.0000/example.doi},
+%   url       = {https://example.org/paper},
+% }
+
+% --- Works not currently in ORCID -------------------------------------------
+% Author lists and venues are refreshed automatically from the DOI; the fields
+% below are only a fallback if that lookup fails.
+
+@incollection{iakovliev2021elasticchains,
+  title   = {Stability of Laterally Compressed Elastic Chains},
+  author  = {Iakovliev, Andrii and Dasmahapatra, Srinandan and Bhaskar, Atul},
+  year    = {2021},
+  doi     = {10.1002/9781119831891.ch2},
+}
+
+@article{iakovliev2022plasmaproteins,
+  title   = {Association of genetic loci for human plasma proteins with response to treatment in people with rheumatoid arthritis},
+  author  = {Iakovliev, Andrii and Ling, Stephanie F. and Colombo, Marco and Plant, Darren and Lewis, Myles J. and Pitzalis, Costantino and Barton, Anne and McKeigue, Paul and Spiliopoulou, Athina},
+  journal = {Genetic Epidemiology},
+  year    = {2022},
+  doi     = {10.1002/gepi.22503},
+}
+
+@article{mesaeguiagaray2025mqtl,
+  title   = {Association between methylation quantitative trait loci and colorectal cancer risk, survival and cancer recurrence},
+  author  = {Mesa-Eguiagaray, Ines and Iakovliev, Andrii and Li, Xiangrui and Timofeeva, Maria and He, Yazhou and Zhang, Xiaomeng and Din, Farhat V. N. and Farrington, Susan M. and Spiliopoulou, Athina and Dunlop, Malcolm G.},
+  journal = {British Journal of Cancer},
+  year    = {2025},
+  doi     = {10.1038/s41416-025-03064-8},
+}

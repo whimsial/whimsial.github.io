@@ -1,0 +1,32 @@
+{%- assign pub = include.pub -%}
+<article class="pub">
+  <h3 class="pub__title">
+    {%- if pub.url -%}
+      <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+    {%- else -%}
+      {{ pub.title }}
+    {%- endif -%}
+  </h3>
+  {%- if pub.authors and pub.authors.size > 0 -%}
+  <p class="pub__authors">
+    {%- for author in pub.authors -%}
+      {%- if author == site.author.name -%}<span class="me">{{ author }}</span>{%- else -%}{{ author }}{%- endif -%}
+      {%- unless forloop.last %}, {% endunless -%}
+    {%- endfor -%}
+  </p>
+  {%- endif -%}
+  {%- if pub.venue -%}
+  <p class="pub__venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
+  {%- endif -%}
+  <div class="pub__meta">
+    <span class="tag tag--{{ pub.type }}">{{ pub.type }}</span>
+    {%- if pub.doi %}<a class="pub-link" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
+    {%- if pub.pdf_url %}<a class="pub-link" href="{{ pub.pdf_url }}" target="_blank" rel="noopener">PDF</a>{% endif -%}
+  </div>
+  {%- if pub.abstract -%}
+  <details class="pub__abstract">
+    <summary>Abstract</summary>
+    <p>{{ pub.abstract }}</p>
+  </details>
+  {%- endif -%}
+</article>

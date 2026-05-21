@@ -1,0 +1,42 @@
+# Short news items shown on the home page (newest first).
+# Each item: date (free text) and text (markdown allowed).
+# Set `paper: true` on items about a publication to show a small link to the
+# full publications list.
+
+- date: 2025
+  paper: true
+  text: >-
+    New paper in *Inflammatory Bowel Diseases* using GATE analysis to implicate
+    deficient Type III interferon signalling as a key cause of inflammatory
+    bowel disease.
+
+- date: 2025
+  paper: true
+  text: >-
+    Paper on core genes for systemic lupus erythematosus published in
+    *Genes & Immunity*.
+
+- date: 2025
+  paper: true
+  text: >-
+    GATE analysis of circulating proteins points to a key role of immune
+    checkpoints in type 1 diabetes — published in *Diabetes*, selected as the
+    journal's Paper of the Month, with the inferred trans-pQTL regulatory
+    diagram for type 1 diabetes core genes featured on the cover.
+
+- date: 2025
+  paper: true
+  text: >-
+    Paper identifying immune-checkpoint genes as core genes for rheumatoid
+    arthritis published in *Arthritis & Rheumatology*.
+
+- date: 2024
+  paper: true
+  text: >-
+    Paper on the genetics of C-peptide and age at diagnosis in type 1 diabetes
+    published in *Diabetes* and selected as the journal's Paper of the Month.
+
+- date: 2024
+  text: >-
+    Received the European Society of Human Genetics **Early Career Award for
+    Outstanding Science** for work on GATE analysis.

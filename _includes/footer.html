@@ -1,2 +1,27 @@
-  </body>
-</html>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</span>
+    <span>
+      Built with <a href="https://jekyllrb.com">Jekyll</a> &middot;
+      Publications via <a href="https://orcid.org/{{ site.author.orcid }}">ORCID</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // Dark-mode toggle. Cycles light <-> dark and remembers the choice.
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var current = root.getAttribute('data-theme');
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = current
+        ? (current === 'dark' ? 'light' : 'dark')
+        : (systemDark ? 'light' : 'dark');
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>

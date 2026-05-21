@@ -1,9 +1,0 @@
-<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Languages/frameworks</h2>
-<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Some languages/frameworks I use.</p>
-<div class="clearfix gutter-condensed">
-  {% for topic in site.topics %}
-    <div class="col-3 d-inline-block p-2">
-      {% include topic-card.html %}
-    </div>
-  {% endfor %}
-</div>

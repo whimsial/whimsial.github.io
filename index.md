@@ -32,7 +32,7 @@ the
 [Sara Brown Research Group](https://institute-genetics-cancer.ed.ac.uk/research/research-groups-a-z/sara-brown-research-group),
 and the
 [Genetic Targets and Precision Medicine group](https://precmed.cphs.mvm.ed.ac.uk/)
-of Prof. Paul McKeigue and Dr Athina Spiliopoulou.
+of Prof. Paul McKeigue and Dr Athina Spiliopoulou. I also work with Dr Erika Kague's group on genetics of osteoarthritis.
 
 Find me on [ORCID](https://orcid.org/0000-0003-4031-0073) and
 [Google Scholar](https://scholar.google.com/citations?user=bHkG2loAAAAJ), or see

@@ -1,7 +1,7 @@
 name: Update publications
 
 # Refreshes _data/publications.yml from ORCID + _bibliography/extra.bib.
-# A commit to master from this job triggers the Deploy site workflow.
+# Opens a pull request with the updated file so it can be merged into master.
 
 on:
   schedule:
@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update:
@@ -32,14 +33,11 @@ jobs:
           S2_API_KEY: ${{ secrets.S2_API_KEY }}
         run: python scripts/fetch_publications.py
 
-      - name: Commit updated publications
-        run: |
-          if git diff --quiet -- _data/publications.yml; then
-            echo "No publication changes."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _data/publications.yml
-          git commit -m "Update publications from ORCID"
-          git push
+      - name: Open pull request with updated publications
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update publications from ORCID"
+          branch: update-publications
+          title: "Update publications from ORCID"
+          body: "Automated update of `_data/publications.yml` fetched from ORCID."
+          add-paths: _data/publications.yml
